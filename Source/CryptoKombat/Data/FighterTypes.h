@@ -142,5 +142,11 @@ struct FCryptoRosterFactory
 	static FFighterDefinition MakeVitalSpark();
 	static FFighterDefinition MakeCZChain();
 	static FFighterDefinition MakeBrianCoin();
+	static FFighterDefinition MakeSolFlash();
+	static FFighterDefinition MakeDotWeaver();
+	static FFighterDefinition MakeHaydenSwap();
+	static FFighterDefinition MakeTronBlaze();
+	static FFighterDefinition MakeArthurPerp();
+	static FFighterDefinition MakeAdaScholar();
 	static TArray<FFighterDefinition> MakeDefaultRoster();
 };

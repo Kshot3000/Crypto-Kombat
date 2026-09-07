@@ -65,6 +65,55 @@ Tone: arcade swagger + memespace absurdity, not defamation. Everyone is a cartoo
 - **Fatality — Exit Liquidity:** mid-air dump; red-chart crush  
 - **Input hint:** D, F, D, Special (near)
 
+
+### 5. Sol Flash — *The Parallel Striker*
+- **Color:** violet pulse  
+- **Fantasy:** parallel-fist blur; sub-second confirmations, overclocked footwear  
+- **Normals:** Slot Jab, Validator Smash, Throughput Kick, Parallel Roundhouse  
+- **Specials:** **Slot Storm** (flurry), Priority Fee Rush (paid-priority dash)  
+- **Fatality — Network Congestion Crush:** flood the arena until they freeze mid-frame  
+- **Input hint:** F, F, F, LP (near)
+
+### 6. Dot Weaver — *The Interchain Architect*
+- **Color:** parachain magenta  
+- **Fantasy:** tripwire zoning; bind, kite, gavel  
+- **Normals:** Thread Jab, Governance Punch, Collator Sweep, Bridge Kick  
+- **Specials:** **Parachain Bind** (setup thread), Relay Kick  
+- **Fatality — Finality Gavel:** unanimous session vote seals them in a block  
+- **Input hint:** D, B, F, HP (near)
+
+### 7. Hayden Swap — *The Liquidity Ghost*
+- **Color:** soft pink curve  
+- **Fantasy:** AMM mixup ghost; always long and short at once  
+- **Normals:** Swap Jab, Curve Punch, Slippage Kick, Pool Kick  
+- **Specials:** **Impermanent Loss** (drain zone), Flash Loan Dash (cross-up)  
+- **Fatality — Rug the Pool:** arcade gag — yank the swimming pool; empty cartoon basin (parody only)  
+- **Input hint:** B, D, F, Special (near)
+
+### 8. Tron Blaze — *The Showman Chain*
+- **Color:** spotlight red  
+- **Fantasy:** trailer-move showman; never quietly KO'd  
+- **Normals:** Spotlight Jab, Marquee Punch, Encore Kick, BitTorrent Boot  
+- **Specials:** **Sunbeam Spear** (projectile), Arena Drop (dunk grab)  
+- **Fatality — Eternal Broadcast:** lock them in a looping livestream → pixel confetti  
+- **Input hint:** F, D, F, HK (near)
+
+### 9. Arthur Perp — *The Leverage King*
+- **Color:** funding cyan  
+- **Fantasy:** every punch is sized; high risk / high reward  
+- **Normals:** Tick Jab, Sized Punch, Basis Kick, Open Interest Kick  
+- **Specials:** **100x Long** (all-in rush), Funding Rate Drain (meter siphon)  
+- **Fatality — Forced Liquidation Finisher:** margin-call cascade auto-sells the health bar  
+- **Input hint:** D, F, F, Special (near)
+
+### 10. Ada Scholar — *The Peer-Reviewed Pugilist*
+- **Color:** academic navy  
+- **Fantasy:** measure twice, punch once; counter-heavy tank  
+- **Normals:** Lemma Jab, Theorem Punch, Citation Kick, Haskell Roundhouse  
+- **Specials:** **Formal Proof Guard** (counter), Epoch Sweep  
+- **Fatality — Peer Review Rejection:** REJECTED stamp; crumple into unread whitepapers  
+- **Input hint:** B, B, D, HP (near)
+
 ## Art direction
 - Stylized low-poly / toon; exaggerated proportions  
 - Stage: “Crypto Pit” — neon candles, floating order-book glyphs (original art)  
@@ -79,7 +128,7 @@ Tone: arcade swagger + memespace absurdity, not defamation. Everyone is a cartoo
 - AnimBP + montage-driven cancel windows  
 - Combo counter UI / WBP_FightHUD  
 - Fatality cinematic sequencer  
-- Two more roster members + stage select  
+- Stage select + additional roster beyond the Phase 1 ten  
 - Rollback netcode exploration  
 
 ## Legal posture

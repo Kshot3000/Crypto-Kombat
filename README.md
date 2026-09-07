@@ -51,13 +51,13 @@ Source/CryptoKombat/
   Characters/           ACryptoFighter
   Game/                 AFightGameMode, AFightGameState
   Camera/               AFightCamera
-  Data/                 FighterTypes + roster factory (4 fighters)
+  Data/                 FighterTypes + roster factory (10 fighters)
   Input/                Enhanced Input documentation stub
 DESIGN.md               Vision, roster, moves, art direction
 CONTROLS.md             P1 / P2 keyboard layout
 ```
 
-## Roster (Phase 1)
+## Roster (10 fighters)
 
 | ID | Name | Tagline |
 |---|---|---|
@@ -65,6 +65,12 @@ CONTROLS.md             P1 / P2 keyboard layout
 | `VitalSpark` | Vital Spark | The Smart-Contract Sage |
 | `CZChain` | CZ Chain | The Exchange Enforcer |
 | `BrianCoin` | Brian Coin | The Meme-Market Maverick |
+| `SolFlash` | Sol Flash | The Parallel Striker |
+| `DotWeaver` | Dot Weaver | The Interchain Architect |
+| `HaydenSwap` | Hayden Swap | The Liquidity Ghost |
+| `TronBlaze` | Tron Blaze | The Showman Chain |
+| `ArthurPerp` | Arthur Perp | The Leverage King |
+| `AdaScholar` | Ada Scholar | The Peer-Reviewed Pugilist |
 
 Full bios, normals, specials, and fatality concepts → **DESIGN.md**.
 
