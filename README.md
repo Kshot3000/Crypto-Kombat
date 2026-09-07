@@ -62,7 +62,7 @@ CONTROLS.md             P1 / P2 keyboard layout
 | ID | Name | Tagline |
 |---|---|---|
 | `SatoshiShadow` | Satoshi Shadow | The Anonymous Genesis |
-| `VitalSpark` | Vital Spark | The Smart-Contract Sage |
+| `VitalSpark` | Vital Spark | The Ethereum Architect |
 | `CZChain` | CZ Chain | The Exchange Enforcer |
 | `BrianCoin` | Brian Coin | The Meme-Market Maverick |
 | `SolFlash` | Sol Flash | The Parallel Striker |
@@ -70,7 +70,7 @@ CONTROLS.md             P1 / P2 keyboard layout
 | `HaydenSwap` | Hayden Swap | The Liquidity Ghost |
 | `TronBlaze` | Tron Blaze | The Showman Chain |
 | `ArthurPerp` | Arthur Perp | The Leverage King |
-| `AdaScholar` | Ada Scholar | The Peer-Reviewed Pugilist |
+| `CharlesEpoch` | Charles Epoch | The Formal Methods Firebrand |
 
 Full bios, normals, specials, and fatality concepts → **DESIGN.md**.
 

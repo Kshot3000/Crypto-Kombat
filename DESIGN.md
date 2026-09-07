@@ -41,12 +41,12 @@ Tone: arcade swagger + memespace absurdity, not defamation. Everyone is a cartoo
 - **Fatality — Rugpull Rift:** yank the floor; rival drops into a mempool abyss  
 - **Input hint:** D, D, F, HP (near)
 
-### 2. Vital Spark — *The Smart-Contract Sage*
-- **Color:** ethereal blue  
-- **Fantasy:** lanky compile-monk; gas-efficient footsies  
+### 2. Vital Spark — *The Ethereum Architect*
+- **Color:** Ethereum purple/blue (~0.55, 0.35, 0.95)  
+- **Fantasy:** lanky hoodie-coder; whiteboards mid-round, proof-of-stake sermons, research tangents mid-fight (Vitalik-inspired parody — not affiliated)  
 - **Normals:** Gas Jab, Opcode Smash, Shard Sweep, Beacon Kick  
-- **Specials:** **Liquidation Laser**, Fork Flip (reposition)  
-- **Fatality — Reentrancy Ruin:** recursive call stack overflow  
+- **Specials:** **Proof-of-Stake Slam**, Danksharding Dash (blob-boosted reposition)  
+- **Fatality — The Merge:** recursive proof collapse into a zero-knowledge singularity  
 - **Input hint:** B, F, B, Special (near)
 
 ### 3. CZ Chain — *The Exchange Enforcer*
@@ -106,13 +106,14 @@ Tone: arcade swagger + memespace absurdity, not defamation. Everyone is a cartoo
 - **Fatality — Forced Liquidation Finisher:** margin-call cascade auto-sells the health bar  
 - **Input hint:** D, F, F, Special (near)
 
-### 10. Ada Scholar — *The Peer-Reviewed Pugilist*
-- **Color:** academic navy  
-- **Fantasy:** measure twice, punch once; counter-heavy tank  
-- **Normals:** Lemma Jab, Theorem Punch, Citation Kick, Haskell Roundhouse  
-- **Specials:** **Formal Proof Guard** (counter), Epoch Sweep  
-- **Fatality — Peer Review Rejection:** REJECTED stamp; crumple into unread whitepapers  
-- **Input hint:** B, B, D, HP (near)
+### 10. Charles Epoch — *The Formal Methods Firebrand*
+- **Color:** Cardano blue (~0.15, 0.45, 0.85)  
+- **Fantasy:** Wyoming mountain-philosopher; long-form lectures mid-combo, peer-reviewed punches, epoch vibes (Hoskinson-inspired parody — not affiliated)  
+- **Normals:** Peer Review, Formal Proof Punch, Epoch Sweep, Ouroboros Roundhouse  
+- **Specials:** **Formal Proof Guard** (counter), Ouroboros Orbit  
+- **Fatality — Peer Review Rejection:** REJECTED stamp; crumple into unread whitepapers (alt fantasy: Genesis Ceremony)  
+- **Input hint:** B, B, D, HP (near)  
+- **Stats:** tankier / slower (1100 HP / 420 speed)
 
 ## Art direction
 - Stylized low-poly / toon; exaggerated proportions  

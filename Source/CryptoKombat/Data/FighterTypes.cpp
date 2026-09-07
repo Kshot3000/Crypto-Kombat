@@ -71,36 +71,36 @@ FFighterDefinition FCryptoRosterFactory::MakeVitalSpark()
 	FFighterDefinition F;
 	F.FighterId = TEXT("VitalSpark");
 	F.DisplayName = NSLOCTEXT("CryptoKombat", "VitalName", "Vital Spark");
-	F.ArchetypeTagline = NSLOCTEXT("CryptoKombat", "VitalTag", "The Smart-Contract Sage");
+	F.ArchetypeTagline = NSLOCTEXT("CryptoKombat", "VitalTag", "The Ethereum Architect");
 	F.Bio = NSLOCTEXT("CryptoKombat", "VitalBio",
-		"A lanky coder-monk whose fists compile mid-combo. Prefers gas-efficient strikes and philosophical mid-match tweets (imaginary ones).");
-	F.AccentColor = FLinearColor(0.4f, 0.55f, 0.95f);
+		"Lanky hoodie-coder archetype who whiteboards mid-round and sermons about proof-of-stake between combos. Research tangents mid-fight; clearly Vitalik-inspired parody — not affiliated with any real person.");
+	F.AccentColor = FLinearColor(0.55f, 0.35f, 0.95f);
 	F.MaxHealth = 950.f;
 	F.WalkSpeed = 480.f;
 
 	F.Normals = {
 		MakeMove(TEXT("VS_LP"), NSLOCTEXT("CryptoKombat", "VS_LP", "Gas Jab"),
-			NSLOCTEXT("CryptoKombat", "VS_LP_D", "Cheap, fast poke."), EAttackSlot::LightPunch, 28.f, 0.22f, 0.15f, 0.f),
+			NSLOCTEXT("CryptoKombat", "VS_LP_D", "Cheap, fast poke — pays the fee."), EAttackSlot::LightPunch, 28.f, 0.22f, 0.15f, 0.f),
 		MakeMove(TEXT("VS_HP"), NSLOCTEXT("CryptoKombat", "VS_HP", "Opcode Smash"),
-			NSLOCTEXT("CryptoKombat", "VS_HP_D", "Heavy contract punch."), EAttackSlot::HeavyPunch, 65.f, 0.42f, 0.32f, 0.f),
+			NSLOCTEXT("CryptoKombat", "VS_HP_D", "Heavy EVM punch."), EAttackSlot::HeavyPunch, 65.f, 0.42f, 0.32f, 0.f),
 		MakeMove(TEXT("VS_LK"), NSLOCTEXT("CryptoKombat", "VS_LK", "Shard Sweep"),
-			NSLOCTEXT("CryptoKombat", "VS_LK_D", "Low sweep."), EAttackSlot::LightKick, 32.f, 0.26f, 0.2f, 0.f),
+			NSLOCTEXT("CryptoKombat", "VS_LK_D", "Low sweep across the shard plane."), EAttackSlot::LightKick, 32.f, 0.26f, 0.2f, 0.f),
 		MakeMove(TEXT("VS_HK"), NSLOCTEXT("CryptoKombat", "VS_HK", "Beacon Kick"),
-			NSLOCTEXT("CryptoKombat", "VS_HK_D", "Long-range kick."), EAttackSlot::HeavyKick, 75.f, 0.48f, 0.38f, 0.f, 100.f),
+			NSLOCTEXT("CryptoKombat", "VS_HK_D", "Long-range chain-synced kick."), EAttackSlot::HeavyKick, 75.f, 0.48f, 0.38f, 0.f, 100.f),
 	};
 
 	F.Specials = {
-		MakeMove(TEXT("VS_SP1"), NSLOCTEXT("CryptoKombat", "VS_SP1", "Liquidation Laser"),
-			NSLOCTEXT("CryptoKombat", "VS_SP1_D", "Beam that deletes overleveraged health."), EAttackSlot::Special1, 130.f, 0.5f, 0.5f, 30.f, 160.f),
-		MakeMove(TEXT("VS_SP2"), NSLOCTEXT("CryptoKombat", "VS_SP2", "Fork Flip"),
-			NSLOCTEXT("CryptoKombat", "VS_SP2_D", "Teleport-style hard fork reposition."), EAttackSlot::Special2, 40.f, 0.3f, 0.35f, 20.f),
+		MakeMove(TEXT("VS_SP1"), NSLOCTEXT("CryptoKombat", "VS_SP1", "Proof-of-Stake Slam"),
+			NSLOCTEXT("CryptoKombat", "VS_SP1_D", "Stake the foe into the floor with validator force."), EAttackSlot::Special1, 125.f, 0.52f, 0.48f, 30.f, 90.f),
+		MakeMove(TEXT("VS_SP2"), NSLOCTEXT("CryptoKombat", "VS_SP2", "Danksharding Dash"),
+			NSLOCTEXT("CryptoKombat", "VS_SP2_D", "Blob-boosted reposition beam dash."), EAttackSlot::Special2, 55.f, 0.28f, 0.32f, 22.f, 140.f),
 	};
 
 	FFatalityConcept Fat;
-	Fat.FatalityId = TEXT("VS_FAT_Reentrancy");
-	Fat.DisplayName = NSLOCTEXT("CryptoKombat", "VS_FAT", "Reentrancy Ruin");
+	Fat.FatalityId = TEXT("VS_FAT_Merge");
+	Fat.DisplayName = NSLOCTEXT("CryptoKombat", "VS_FAT", "The Merge");
 	Fat.FlavorText = NSLOCTEXT("CryptoKombat", "VS_FAT_F",
-		"Trap the foe in a recursive call stack until their sprite overflows into static.");
+		"Fuse their health bars into one recursive proof; they collapse into a glowing zero-knowledge singularity.");
 	Fat.InputHint = TEXT("Back, Forward, Back, Special (near)");
 	F.Fatalities = { Fat };
 	return F;
@@ -387,41 +387,41 @@ FFighterDefinition FCryptoRosterFactory::MakeArthurPerp()
 	return F;
 }
 
-FFighterDefinition FCryptoRosterFactory::MakeAdaScholar()
+FFighterDefinition FCryptoRosterFactory::MakeCharlesEpoch()
 {
 	FFighterDefinition F;
-	F.FighterId = TEXT("AdaScholar");
-	F.DisplayName = NSLOCTEXT("CryptoKombat", "AdaName", "Ada Scholar");
-	F.ArchetypeTagline = NSLOCTEXT("CryptoKombat", "AdaTag", "The Peer-Reviewed Pugilist");
-	F.Bio = NSLOCTEXT("CryptoKombat", "AdaBio",
-		"Measures twice, punches once. Prefers counters backed by lemmas. Will cite sources mid-combo if you ask politely.");
-	F.AccentColor = FLinearColor(0.2f, 0.35f, 0.75f);
+	F.FighterId = TEXT("CharlesEpoch");
+	F.DisplayName = NSLOCTEXT("CryptoKombat", "CharlesName", "Charles Epoch");
+	F.ArchetypeTagline = NSLOCTEXT("CryptoKombat", "CharlesTag", "The Formal Methods Firebrand");
+	F.Bio = NSLOCTEXT("CryptoKombat", "CharlesBio",
+		"Wyoming mountain-philosopher energy: long-form lectures mid-combo, peer-reviewed punches, and epoch-length monologues. Cardano-coded parody archetype — not affiliated with any real person.");
+	F.AccentColor = FLinearColor(0.15f, 0.45f, 0.85f);
 	F.MaxHealth = 1100.f;
 	F.WalkSpeed = 420.f;
 
 	F.Normals = {
-		MakeMove(TEXT("AS_LP"), NSLOCTEXT("CryptoKombat", "AS_LP", "Lemma Jab"),
-			NSLOCTEXT("CryptoKombat", "AS_LP_D", "Patient, precise jab."), EAttackSlot::LightPunch, 32.f, 0.28f, 0.2f, 0.f),
-		MakeMove(TEXT("AS_HP"), NSLOCTEXT("CryptoKombat", "AS_HP", "Theorem Punch"),
-			NSLOCTEXT("CryptoKombat", "AS_HP_D", "Heavy that rewards correct spacing."), EAttackSlot::HeavyPunch, 82.f, 0.52f, 0.4f, 0.f),
-		MakeMove(TEXT("AS_LK"), NSLOCTEXT("CryptoKombat", "AS_LK", "Citation Kick"),
-			NSLOCTEXT("CryptoKombat", "AS_LK_D", "Measured low check."), EAttackSlot::LightKick, 36.f, 0.3f, 0.22f, 0.f),
-		MakeMove(TEXT("AS_HK"), NSLOCTEXT("CryptoKombat", "AS_HK", "Haskell Roundhouse"),
-			NSLOCTEXT("CryptoKombat", "AS_HK_D", "Functional, pure, and painful."), EAttackSlot::HeavyKick, 86.f, 0.55f, 0.42f, 0.f, 90.f),
+		MakeMove(TEXT("CE_LP"), NSLOCTEXT("CryptoKombat", "CE_LP", "Peer Review"),
+			NSLOCTEXT("CryptoKombat", "CE_LP_D", "Patient jab that demands a citation."), EAttackSlot::LightPunch, 32.f, 0.28f, 0.2f, 0.f),
+		MakeMove(TEXT("CE_HP"), NSLOCTEXT("CryptoKombat", "CE_HP", "Formal Proof Punch"),
+			NSLOCTEXT("CryptoKombat", "CE_HP_D", "Heavy that rewards correct spacing and lemmas."), EAttackSlot::HeavyPunch, 82.f, 0.52f, 0.4f, 0.f),
+		MakeMove(TEXT("CE_LK"), NSLOCTEXT("CryptoKombat", "CE_LK", "Epoch Sweep"),
+			NSLOCTEXT("CryptoKombat", "CE_LK_D", "Measured low that resets the pacing."), EAttackSlot::LightKick, 36.f, 0.3f, 0.22f, 0.f),
+		MakeMove(TEXT("CE_HK"), NSLOCTEXT("CryptoKombat", "CE_HK", "Ouroboros Roundhouse"),
+			NSLOCTEXT("CryptoKombat", "CE_HK_D", "Circular protocol kick — pure and painful."), EAttackSlot::HeavyKick, 86.f, 0.55f, 0.42f, 0.f, 90.f),
 	};
 
 	F.Specials = {
-		MakeMove(TEXT("AS_SP1"), NSLOCTEXT("CryptoKombat", "AS_SP1", "Formal Proof Guard"),
-			NSLOCTEXT("CryptoKombat", "AS_SP1_D", "Counter stance that punishes the next strike."), EAttackSlot::Special1, 0.f, 0.25f, 0.7f, 20.f),
-		MakeMove(TEXT("AS_SP2"), NSLOCTEXT("CryptoKombat", "AS_SP2", "Epoch Sweep"),
-			NSLOCTEXT("CryptoKombat", "AS_SP2_D", "Wide low sweep that resets the round's pacing."), EAttackSlot::Special2, 95.f, 0.5f, 0.45f, 25.f, 100.f),
+		MakeMove(TEXT("CE_SP1"), NSLOCTEXT("CryptoKombat", "CE_SP1", "Formal Proof Guard"),
+			NSLOCTEXT("CryptoKombat", "CE_SP1_D", "Counter stance that peer-reviews the next strike."), EAttackSlot::Special1, 0.f, 0.25f, 0.7f, 20.f),
+		MakeMove(TEXT("CE_SP2"), NSLOCTEXT("CryptoKombat", "CE_SP2", "Ouroboros Orbit"),
+			NSLOCTEXT("CryptoKombat", "CE_SP2_D", "Wide orbiting sweep that seals the slot."), EAttackSlot::Special2, 95.f, 0.5f, 0.45f, 25.f, 100.f),
 	};
 
 	FFatalityConcept Fat;
-	Fat.FatalityId = TEXT("AS_FAT_Reject");
-	Fat.DisplayName = NSLOCTEXT("CryptoKombat", "AS_FAT", "Peer Review Rejection");
-	Fat.FlavorText = NSLOCTEXT("CryptoKombat", "AS_FAT_F",
-		"Stamp REJECTED across the rival in glowing ink; they crumple into a stack of unread whitepapers.");
+	Fat.FatalityId = TEXT("CE_FAT_Reject");
+	Fat.DisplayName = NSLOCTEXT("CryptoKombat", "CE_FAT", "Peer Review Rejection");
+	Fat.FlavorText = NSLOCTEXT("CryptoKombat", "CE_FAT_F",
+		"Stamp REJECTED across the rival in glowing ink; they crumple into a stack of unread whitepapers. Alternate fantasy: Genesis Ceremony lights seal them in an epoch vault.");
 	Fat.InputHint = TEXT("Back, Back, Down, Heavy Punch (near)");
 	F.Fatalities = { Fat };
 	return F;
@@ -439,6 +439,6 @@ TArray<FFighterDefinition> FCryptoRosterFactory::MakeDefaultRoster()
 		MakeHaydenSwap(),
 		MakeTronBlaze(),
 		MakeArthurPerp(),
-		MakeAdaScholar()
+		MakeCharlesEpoch()
 	};
 }

@@ -147,6 +147,6 @@ struct FCryptoRosterFactory
 	static FFighterDefinition MakeHaydenSwap();
 	static FFighterDefinition MakeTronBlaze();
 	static FFighterDefinition MakeArthurPerp();
-	static FFighterDefinition MakeAdaScholar();
+	static FFighterDefinition MakeCharlesEpoch();
 	static TArray<FFighterDefinition> MakeDefaultRoster();
 };
