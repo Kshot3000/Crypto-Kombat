@@ -1,0 +1,71 @@
+# Unreal Engine 5 — CryptoKombat
+
+# Visual Studio / Rider / VS Code
+.vs/
+.vscode/
+.idea/
+*.sln
+*.suo
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
+*.user
+*.userosscache
+*.aps
+*.opendb
+
+# Build & Intermediate
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+Build/
+*/Binaries/
+*/Intermediate/
+*/Saved/
+*/DerivedDataCache/
+
+# Compiled
+*.dll
+*.exe
+*.pdb
+*.lib
+*.exp
+*.obj
+*.o
+*.a
+*.so
+*.dylib
+
+# Packaging / Cooked
+Cooked/
+StagedBuilds/
+ArchivedBuilds/
+Releases/
+PackagedBuilds/
+
+# Local caches & logs
+*.log
+*.dmp
+CrashReportClient/
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python / tooling (local)
+__pycache__/
+*.pyc
+
+# Keep Content placeholders; ignore generated uasset caches if any appear outside Content
+*.tmp
+*.bak
+*~
+
+# Do not ignore Source or Config
+!Source/
+!Config/
+!Content/
+!*.uproject
