@@ -10,6 +10,7 @@
 class ACryptoFighter;
 class AFightGameState;
 class AFightCamera;
+class ABlockchainColosseum;
 
 /**
  * Local versus GameMode: best-of-3 rounds, countdown timer, spawn two fighters.
@@ -43,17 +44,26 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CryptoKombat|Spawn")
 	TSubclassOf<AFightCamera> CameraClass;
 
+	/** Procedural arena class (Blockchain Colosseum by default). */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CryptoKombat|Arena")
+	TSubclassOf<ABlockchainColosseum> ArenaClass;
+
+	/** If true and no ABlockchainColosseum exists in the world, spawn one before fighters. */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CryptoKombat|Arena")
+	bool bAutoSpawnArena = true;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CryptoKombat|Spawn")
 	FVector P1SpawnLocation = FVector(0.f, -300.f, 100.f);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CryptoKombat|Spawn")
 	FVector P2SpawnLocation = FVector(0.f, 300.f, 100.f);
 
+	/** Featured default matchup: Vital Spark vs Charles Epoch. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CryptoKombat|Roster")
-	FName P1FighterId = TEXT("SatoshiShadow");
+	FName P1FighterId = TEXT("VitalSpark");
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CryptoKombat|Roster")
-	FName P2FighterId = TEXT("BrianCoin");
+	FName P2FighterId = TEXT("CharlesEpoch");
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CryptoKombat|Match")
 	float PreRoundDelay = 2.f;
@@ -71,7 +81,11 @@ protected:
 	UPROPERTY()
 	TObjectPtr<AFightCamera> FightCamera;
 
+	UPROPERTY()
+	TObjectPtr<ABlockchainColosseum> ActiveArena;
+
 	FFighterDefinition FindRosterFighter(FName FighterId) const;
+	void EnsureArena();
 	void SpawnFighters();
 	void SpawnCamera();
 	void UpdateFacing();

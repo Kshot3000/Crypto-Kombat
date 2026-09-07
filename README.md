@@ -34,12 +34,13 @@ CryptoKombatEditor (Development Editor)
 
 ### 4. Open & play
 1. Launch `CryptoKombat.uproject` in the UE5.4 Editor  
-2. Create a simple side-view map (or use the default OpenWorld stub)  
-3. Place floor collision; set Game Mode Override to `FightGameMode` / `BP_FightGameMode`  
-4. PIE (Play In Editor) — GameMode spawns two `ACryptoFighter`s + `AFightCamera`  
-5. See **CONTROLS.md** for the keyboard layout  
+2. Open any map (or the default stub) — **no custom `.umap` required**  
+3. Set Game Mode Override to `FightGameMode` / `BP_FightGameMode`  
+4. PIE — GameMode auto-builds **Blockchain Colosseum**, then spawns fighters + `AFightCamera`  
+5. Default matchup: **Vital Spark** vs **Charles Epoch**  
+6. See **CONTROLS.md** for the keyboard layout; **ARENA.md** for the procedural stage  
 
-Until Blueprints exist, C++ classes run with capsule characters and debug hit boxes.
+Until Blueprints exist, C++ classes run with capsule characters, debug hit boxes, and engine-cube arena geometry.
 
 ## Project layout
 
@@ -48,12 +49,14 @@ CryptoKombat.uproject
 Config/                 DefaultEngine / DefaultGame / DefaultInput
 Content/README.md       Where Blueprints & placeholders go
 Source/CryptoKombat/
+  Arena/                ABlockchainColosseum (procedural starter stage)
   Characters/           ACryptoFighter
   Game/                 AFightGameMode, AFightGameState
   Camera/               AFightCamera
   Data/                 FighterTypes + roster factory (10 fighters)
   Input/                Enhanced Input documentation stub
-DESIGN.md               Vision, roster, moves, art direction
+DESIGN.md               Vision, roster, arenas, moves, art direction
+ARENA.md                Blockchain Colosseum builder + future map path
 CONTROLS.md             P1 / P2 keyboard layout
 ```
 
@@ -80,6 +83,7 @@ Full bios, normals, specials, and fatality concepts → **DESIGN.md**.
 - Box-sweep attack traces  
 - Best-of-3 rounds + 99s timer  
 - Locked orthographic side-view camera framing both fighters  
+- Procedural **Blockchain Colosseum** arena (auto-spawned by GameMode)  
 - Enhanced Input hooks + classic `DefaultInput.ini` fallback for 2-player keyboard  
 
 ## License / parody note

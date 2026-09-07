@@ -115,9 +115,22 @@ Tone: arcade swagger + memespace absurdity, not defamation. Everyone is a cartoo
 - **Input hint:** B, B, D, HP (near)  
 - **Stats:** tankier / slower (1100 HP / 420 speed)
 
+
+## Arenas
+
+### Blockchain Colosseum (starter)
+- **Role:** default Phase 1 stage — neon crypto pit for Vital Spark vs Charles Epoch and any local versus
+- **Implementation:** procedural `ABlockchainColosseum` (engine cubes; no `.umap` required)
+- **Layout:** floor slab, soft walls ~Y ±600, backdrop panels, block pillars, mempool rim, floating candle-chart boxes, bright center strip
+- **Palette:** neon cyan + magenta accents on dark slabs
+- **Spawns:** `GetP1Spawn()` / `GetP2Spawn()`; `AFightGameMode` auto-spawns the arena when none exists
+- **Future map:** `Content/Maps/Arena_BlockchainColosseum` — see **ARENA.md** for swap-in steps
+
+Additional stages (select screen, hazard variants) land after the procedural starter is replaced or duplicated.
+
 ## Art direction
 - Stylized low-poly / toon; exaggerated proportions  
-- Stage: “Crypto Pit” — neon candles, floating order-book glyphs (original art)  
+- Stage: **Blockchain Colosseum** — neon candles, mempool rim, floating chart panels (original art; procedural first)  
 - No real exchange UIs, coin logos, or celebrity scans  
 - Phase 1 placeholders: tinted capsules + primitive props (see `Content/README.md`)  
 

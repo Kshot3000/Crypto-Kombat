@@ -4,7 +4,9 @@
 #include "Game/FightGameState.h"
 #include "Characters/CryptoFighter.h"
 #include "Camera/FightCamera.h"
+#include "Arena/BlockchainColosseum.h"
 #include "Kismet/GameplayStatics.h"
+#include "EngineUtils.h"
 #include "CryptoKombat.h"
 
 AFightGameMode::AFightGameMode()
@@ -12,6 +14,7 @@ AFightGameMode::AFightGameMode()
 	PrimaryActorTick.bCanEverTick = true;
 	GameStateClass = AFightGameState::StaticClass();
 	DefaultPawnClass = ACryptoFighter::StaticClass();
+	ArenaClass = ABlockchainColosseum::StaticClass();
 }
 
 void AFightGameMode::BeginPlay()
@@ -96,6 +99,7 @@ void AFightGameMode::Tick(float DeltaSeconds)
 
 void AFightGameMode::StartMatchFlow()
 {
+	EnsureArena();
 	SpawnFighters();
 	SpawnCamera();
 	bMatchStarted = true;
@@ -106,6 +110,37 @@ void AFightGameMode::StartMatchFlow()
 		GS->CurrentRound = 1;
 	}
 	BeginRound();
+}
+
+void AFightGameMode::EnsureArena()
+{
+	UWorld* World = GetWorld();
+	if (!World)
+	{
+		return;
+	}
+
+	// Prefer an arena already placed in the level.
+	for (TActorIterator<ABlockchainColosseum> It(World); It; ++It)
+	{
+		ActiveArena = *It;
+		break;
+	}
+
+	if (!ActiveArena && bAutoSpawnArena)
+	{
+		UClass* ClassToSpawn = ArenaClass ? ArenaClass.Get() : ABlockchainColosseum::StaticClass();
+		FActorSpawnParameters Params;
+		Params.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+		ActiveArena = World->SpawnActor<ABlockchainColosseum>(ClassToSpawn, FVector::ZeroVector, FRotator::ZeroRotator, Params);
+		UE_LOG(LogCryptoKombat, Log, TEXT("Auto-spawned Blockchain Colosseum arena."));
+	}
+
+	if (ActiveArena)
+	{
+		P1SpawnLocation = ActiveArena->GetP1Spawn();
+		P2SpawnLocation = ActiveArena->GetP2Spawn();
+	}
 }
 
 void AFightGameMode::BeginRound()
@@ -119,6 +154,12 @@ void AFightGameMode::BeginRound()
 	GS->RoundPhase = ERoundPhase::PreRound;
 	GS->ResetRoundClock();
 	PhaseTimer = PreRoundDelay;
+
+	if (ActiveArena)
+	{
+		P1SpawnLocation = ActiveArena->GetP1Spawn();
+		P2SpawnLocation = ActiveArena->GetP2Spawn();
+	}
 
 	if (P1Fighter)
 	{
