@@ -42,6 +42,18 @@ CryptoKombatEditor (Development Editor)
 
 Until Blueprints exist, C++ classes run with **procedural block fighters**, hit sparks, Canvas fight HUD, debug hit boxes, and a neon engine-cube arena.
 
+
+## Browser version
+
+A self-contained **HTML5 Canvas** local 1v1 lives under [`web/`](web/) — no Unreal, no build step.
+
+1. Open [`web/index.html`](web/index.html) in a desktop browser, **or**
+2. Serve it: `npx serve web` / `cd web && python3 -m http.server 8080`
+
+Character select → best-of-3 Blockchain Colosseum fight with the parody roster (default **Vital Spark** vs **Charles Epoch**).
+
+Full how-to + controls: **[web/README.md](web/README.md)**.
+
 ## Project layout
 
 ```

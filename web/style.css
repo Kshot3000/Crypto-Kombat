@@ -1,0 +1,108 @@
+:root {
+  --bg: #07060f;
+  --panel: #0e0c1c;
+  --cyan: #00f0ff;
+  --magenta: #ff2bd6;
+  --text: #e8e6ff;
+  --muted: #8a86a8;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: radial-gradient(ellipse at 50% 0%, #1a1030 0%, var(--bg) 55%);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+#wrap {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 16px 12px 28px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+header h1 {
+  margin: 0;
+  letter-spacing: 0.18em;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 800;
+  text-shadow: 0 0 18px rgba(0, 240, 255, 0.45);
+}
+
+header h1 span {
+  color: var(--magenta);
+  text-shadow: 0 0 18px rgba(255, 43, 214, 0.55);
+}
+
+.tag {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+#game {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #05040c;
+  border: 2px solid rgba(0, 240, 255, 0.35);
+  box-shadow:
+    0 0 0 1px rgba(255, 43, 214, 0.25),
+    0 0 40px rgba(0, 240, 255, 0.12),
+    0 18px 50px rgba(0, 0, 0, 0.55);
+  border-radius: 6px;
+  outline: none;
+  cursor: crosshair;
+  image-rendering: pixelated;
+}
+
+#game:focus {
+  border-color: var(--cyan);
+}
+
+#hud-help {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+#hud-help .col {
+  background: rgba(14, 12, 28, 0.85);
+  border: 1px solid rgba(0, 240, 255, 0.15);
+  border-radius: 6px;
+  padding: 10px 12px;
+}
+
+#hud-help strong {
+  color: var(--cyan);
+  display: block;
+  margin-bottom: 4px;
+  letter-spacing: 0.06em;
+}
+
+footer {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 0.72rem;
+  color: #6a6680;
+  line-height: 1.45;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 800px) {
+  #hud-help { grid-template-columns: 1fr; }
+}
