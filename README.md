@@ -40,7 +40,7 @@ CryptoKombatEditor (Development Editor)
 5. Default matchup: **Vital Spark** vs **Charles Epoch**  
 6. See **CONTROLS.md** for the keyboard layout; **ARENA.md** for the procedural stage  
 
-Until Blueprints exist, C++ classes run with capsule characters, debug hit boxes, and engine-cube arena geometry.
+Until Blueprints exist, C++ classes run with **procedural block fighters**, hit sparks, Canvas fight HUD, debug hit boxes, and a neon engine-cube arena.
 
 ## Project layout
 
@@ -50,12 +50,15 @@ Config/                 DefaultEngine / DefaultGame / DefaultInput
 Content/README.md       Where Blueprints & placeholders go
 Source/CryptoKombat/
   Arena/                ABlockchainColosseum (procedural starter stage)
-  Characters/           ACryptoFighter
+  Characters/           ACryptoFighter, UFighterVisuals
+  VFX/                  AHitSpark
+  UI/                   AFightHUD (Canvas)
   Game/                 AFightGameMode, AFightGameState
   Camera/               AFightCamera
   Data/                 FighterTypes + roster factory (10 fighters)
   Input/                Enhanced Input documentation stub
 DESIGN.md               Vision, roster, arenas, moves, art direction
+ART.md                  Art direction + VFX / mesh roadmap
 ARENA.md                Blockchain Colosseum builder + future map path
 CONTROLS.md             P1 / P2 keyboard layout
 ```
@@ -80,10 +83,12 @@ Full bios, normals, specials, and fatality concepts → **DESIGN.md**.
 ## Features in this scaffold
 - Health, block (chip), hitstun, KO  
 - Moon Meter (builds over time / on hit; spends on specials)  
-- Box-sweep attack traces  
+- Box-sweep attack traces + **hit spark** bursts  
 - Best-of-3 rounds + 99s timer  
 - Locked orthographic side-view camera framing both fighters  
-- Procedural **Blockchain Colosseum** arena (auto-spawned by GameMode)  
+- Procedural **stylized block fighters** (`UFighterVisuals`, accent-tinted)  
+- Neon arcade **Canvas HUD** (`AFightHUD`) — names, health, Moon, timer, score  
+- Procedural **Blockchain Colosseum** arena (dark floor, bright neon, overhead lights)  
 - Enhanced Input hooks + classic `DefaultInput.ini` fallback for 2-player keyboard  
 
 ## License / parody note

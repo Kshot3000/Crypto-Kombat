@@ -57,23 +57,23 @@ public:
 
 	/** Neon cyan accent (crypto vibe). */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CryptoKombat|Arena|Colors")
-	FLinearColor AccentCyan = FLinearColor(0.05f, 0.95f, 1.f, 1.f);
+	FLinearColor AccentCyan = FLinearColor(0.15f, 1.f, 1.f, 1.f);
 
 	/** Neon magenta accent. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CryptoKombat|Arena|Colors")
-	FLinearColor AccentMagenta = FLinearColor(1.f, 0.1f, 0.85f, 1.f);
+	FLinearColor AccentMagenta = FLinearColor(1.f, 0.2f, 0.95f, 1.f);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CryptoKombat|Arena|Colors")
-	FLinearColor FloorColor = FLinearColor(0.04f, 0.05f, 0.09f, 1.f);
+	FLinearColor FloorColor = FLinearColor(0.015f, 0.02f, 0.04f, 1.f);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CryptoKombat|Arena|Colors")
-	FLinearColor WallColor = FLinearColor(0.08f, 0.09f, 0.14f, 1.f);
+	FLinearColor WallColor = FLinearColor(0.05f, 0.055f, 0.09f, 1.f);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CryptoKombat|Arena|Colors")
-	FLinearColor BackdropColor = FLinearColor(0.02f, 0.03f, 0.08f, 1.f);
+	FLinearColor BackdropColor = FLinearColor(0.01f, 0.015f, 0.05f, 1.f);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CryptoKombat|Arena|Colors")
-	FLinearColor CenterStripColor = FLinearColor(0.15f, 0.95f, 0.9f, 1.f);
+	FLinearColor CenterStripColor = FLinearColor(0.25f, 1.f, 0.95f, 1.f);
 
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "CryptoKombat|Arena")

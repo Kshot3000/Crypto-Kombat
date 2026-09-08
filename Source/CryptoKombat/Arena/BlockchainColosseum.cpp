@@ -272,6 +272,59 @@ void ABlockchainColosseum::BuildArena()
 			false);
 	}
 
+
+	// --- Neon floor edge strips (strong contrast vs dark floor) ---
+	AddBox(
+		TEXT("FloorNeonFront"),
+		FVector(FloorHalfX - 10.f, 0.f, 3.f),
+		FVector(0.08f, (HalfY * 1.9f) / 100.f, 0.06f),
+		AccentCyan,
+		false);
+	AddBox(
+		TEXT("FloorNeonBack"),
+		FVector(-FloorHalfX + 10.f, 0.f, 3.f),
+		FVector(0.08f, (HalfY * 1.9f) / 100.f, 0.06f),
+		AccentMagenta,
+		false);
+
+	// Overhead light boxes (emissive stand-ins hanging above the stage)
+	const FLinearColor OverheadWarm = FLinearColor(1.f, 0.95f, 0.75f, 1.f);
+	AddBox(
+		TEXT("OverheadLight_L"),
+		FVector(0.f, -HalfY * 0.4f, WallHeight + 40.f),
+		FVector(1.2f, 0.8f, 0.2f),
+		OverheadWarm,
+		false);
+	AddBox(
+		TEXT("OverheadLight_R"),
+		FVector(0.f, HalfY * 0.4f, WallHeight + 40.f),
+		FVector(1.2f, 0.8f, 0.2f),
+		OverheadWarm,
+		false);
+	AddBox(
+		TEXT("OverheadLight_C"),
+		FVector(0.f, 0.f, WallHeight + 55.f),
+		FVector(0.9f, 1.4f, 0.18f),
+		AccentCyan,
+		false);
+
+	// Vertical neon ribs on backdrop
+	for (int32 Rib = 0; Rib < 5; ++Rib)
+	{
+		const float RY = -HalfY * 0.8f + Rib * (HalfY * 1.6f / 4.f);
+		const FLinearColor RibColor = (Rib % 2 == 0) ? AccentCyan : AccentMagenta;
+		AddBox(
+			*FString::Printf(TEXT("BackdropRib_%d"), Rib),
+			FVector(BackdropX - 8.f, RY, WallHeight * 0.5f),
+			FVector(0.06f, 0.08f, (WallHeight * 0.95f) / 100.f),
+			RibColor,
+			false);
+	}
+
+	// Corner neon pylons
+	AddBox(TEXT("Pylon_FL"), FVector(-FloorHalfX + 20.f, -HalfY + 20.f, 80.f), FVector(0.25f, 0.25f, 1.5f), AccentCyan, false);
+	AddBox(TEXT("Pylon_FR"), FVector(-FloorHalfX + 20.f, HalfY - 20.f, 80.f), FVector(0.25f, 0.25f, 1.5f), AccentMagenta, false);
+
 	bBuilt = true;
 	UE_LOG(LogCryptoKombat, Log, TEXT("BlockchainColosseum built (half-width=%.0f, walls=%.0f)"), ArenaHalfWidth, WallHeight);
 }

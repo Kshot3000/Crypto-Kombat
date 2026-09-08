@@ -11,6 +11,7 @@ class ACryptoFighter;
 class AFightGameState;
 class AFightCamera;
 class ABlockchainColosseum;
+class AFightHUD;
 
 /**
  * Local versus GameMode: best-of-3 rounds, countdown timer, spawn two fighters.
@@ -37,6 +38,12 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "CryptoKombat|Match")
 	void CheckForKO();
+
+	UFUNCTION(BlueprintPure, Category = "CryptoKombat|Match")
+	ACryptoFighter* GetP1Fighter() const { return P1Fighter; }
+
+	UFUNCTION(BlueprintPure, Category = "CryptoKombat|Match")
+	ACryptoFighter* GetP2Fighter() const { return P2Fighter; }
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CryptoKombat|Spawn")
 	TSubclassOf<ACryptoFighter> FighterClass;

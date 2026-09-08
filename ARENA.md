@@ -13,14 +13,14 @@ This Phase 1 repo ships **no `.umap` binary assets** (Editor may not be availabl
 |---|---|
 | Class | `Source/CryptoKombat/Arena/BlockchainColosseum.h/.cpp` — `AActor` |
 | Entry | `BuildArena()` clears prior meshes, then spawns `UStaticMeshComponent`s |
-| Floor | Wide Y / thin Z slab with collision |
+| Floor | Dark wide Y / thin Z slab with collision + neon edge strips |
 | Soft walls | Left/right cubes near ±`ArenaHalfWidth` (default 600) |
 | Backdrop | Dark + cyan/magenta accent panels behind +X |
 | Pillars | Short “block” stacks at front corners |
 | Mempool rim | Four low collision boxes around center + tinted pit plane |
 | Candle charts | Thin floating boxes at mid height |
 | Center strip | Bright decal-style plane (logo stand-in) |
-| Colors | `EditAnywhere` `AccentCyan`, `AccentMagenta`, floor/wall/backdrop |
+| Colors | Brighter `AccentCyan` / `AccentMagenta`, darker floor/walls, overhead light boxes, backdrop ribs, corner pylons |
 | Spawns | `GetP1Spawn()` / `GetP2Spawn()` → ±`SpawnHalfSeparation` on Y, `FighterSpawnZ` |
 
 Materials use `CreateDynamicMaterialInstance` on `BasicShapeMaterial` and set `Color` / `BaseColor` vector parameters when available.

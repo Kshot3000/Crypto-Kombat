@@ -5,6 +5,7 @@
 #include "Characters/CryptoFighter.h"
 #include "Camera/FightCamera.h"
 #include "Arena/BlockchainColosseum.h"
+#include "UI/FightHUD.h"
 #include "Kismet/GameplayStatics.h"
 #include "EngineUtils.h"
 #include "CryptoKombat.h"
@@ -14,6 +15,7 @@ AFightGameMode::AFightGameMode()
 	PrimaryActorTick.bCanEverTick = true;
 	GameStateClass = AFightGameState::StaticClass();
 	DefaultPawnClass = ACryptoFighter::StaticClass();
+	HUDClass = AFightHUD::StaticClass();
 	ArenaClass = ABlockchainColosseum::StaticClass();
 }
 

@@ -9,11 +9,13 @@
 
 class UInputMappingContext;
 class UInputAction;
+class UFighterVisuals;
 struct FInputActionValue;
 
 /**
  * Side-view 1v1 fighter pawn.
  * Health, block, stun, facing, Moon Meter, and box-trace attacks.
+ * Procedural stylized body via UFighterVisuals (no .uasset mesh required).
  */
 UCLASS(Blueprintable)
 class CRYPTOKOMBAT_API ACryptoFighter : public ACharacter
@@ -74,6 +76,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CryptoKombat|Input")
 	int32 PlayerIndex = 0;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "CryptoKombat|Visuals")
+	TObjectPtr<UFighterVisuals> FighterVisuals;
+
 protected:
 	void MoveHorizontal(float AxisValue);
 	void OnJumpPressed();
@@ -90,6 +95,7 @@ protected:
 	const FMoveDefinition* FindMove(EAttackSlot Slot) const;
 	void PerformAttackTrace(const FMoveDefinition& Move);
 	void TickStateTimers(float DeltaTime);
+	void SpawnHitSparkAt(const FVector& Location, const FLinearColor& Color);
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "CryptoKombat|Combat")
 	EFighterState FighterState = EFighterState::Idle;

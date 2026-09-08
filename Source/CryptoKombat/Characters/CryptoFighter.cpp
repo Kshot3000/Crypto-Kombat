@@ -1,8 +1,11 @@
 // Copyright CryptoKombat. Phase 1 scaffold.
 
 #include "Characters/CryptoFighter.h"
+#include "Characters/FighterVisuals.h"
 #include "Data/FighterTypes.h"
+#include "VFX/HitSpark.h"
 #include "Components/CapsuleComponent.h"
+#include "Components/SkeletalMeshComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
@@ -28,6 +31,18 @@ ACryptoFighter::ACryptoFighter()
 	GetCharacterMovement()->SetPlaneConstraintEnabled(true);
 	GetCharacterMovement()->SetPlaneConstraintNormal(FVector(1.f, 0.f, 0.f));
 	GetCharacterMovement()->bConstrainToPlane = true;
+
+	// Procedural block-fighter visuals under the capsule (collision unchanged).
+	FighterVisuals = CreateDefaultSubobject<UFighterVisuals>(TEXT("FighterVisuals"));
+	FighterVisuals->SetupAttachment(RootComponent);
+
+	// Hide default skeletal mesh — we use BasicShapes body instead.
+	if (USkeletalMeshComponent* Skel = GetMesh())
+	{
+		Skel->SetHiddenInGame(true);
+		Skel->SetVisibility(false);
+		Skel->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	}
 }
 
 void ACryptoFighter::BeginPlay()
@@ -152,6 +167,11 @@ void ACryptoFighter::ApplyFighterDefinition(const FFighterDefinition& Definition
 	CurrentMoonMeter = 0.f;
 	GetCharacterMovement()->MaxWalkSpeed = Definition.WalkSpeed;
 	SetFighterState(EFighterState::Idle);
+
+	if (FighterVisuals)
+	{
+		FighterVisuals->BuildBody(Definition.FighterId, Definition.AccentColor);
+	}
 }
 
 void ACryptoFighter::SetFacingRight(bool bRight)
@@ -311,6 +331,10 @@ void ACryptoFighter::PerformAttackTrace(const FMoveDefinition& Move)
 		{
 			Victim->ReceiveHit(Move.Damage, Move.HitstunDuration, this);
 			AddMoonMeter(8.f);
+			const FVector SparkLoc = Hit.ImpactPoint.IsNearlyZero()
+				? (Victim->GetActorLocation() + FVector(0.f, 0.f, 40.f))
+				: Hit.ImpactPoint;
+			SpawnHitSparkAt(SparkLoc, FighterData.AccentColor);
 		}
 	}
 }
@@ -337,6 +361,11 @@ const FMoveDefinition* ACryptoFighter::FindMove(EAttackSlot Slot) const
 void ACryptoFighter::SetFighterState(EFighterState NewState)
 {
 	FighterState = NewState;
+	if (FighterVisuals)
+	{
+		const bool bAttacking = (NewState == EFighterState::Attack || NewState == EFighterState::Special);
+		FighterVisuals->SetAttackPose(bAttacking);
+	}
 }
 
 void ACryptoFighter::TickStateTimers(float DeltaTime)
@@ -422,4 +451,15 @@ void ACryptoFighter::HandleBlock(const FInputActionValue& Value)
 {
 	const bool bPressed = Value.Get<bool>();
 	SetBlocking(bPressed);
+}
+
+void ACryptoFighter::SpawnHitSparkAt(const FVector& Location, const FLinearColor& Color)
+{
+	// Bright flash blended toward accent (yellow-white pop).
+	const FLinearColor Flash = FLinearColor(
+		FMath::Clamp(Color.R * 0.55f + 0.45f, 0.f, 1.f),
+		FMath::Clamp(Color.G * 0.55f + 0.45f, 0.f, 1.f),
+		FMath::Clamp(Color.B * 0.35f + 0.2f, 0.f, 1.f),
+		1.f);
+	AHitSpark::SpawnHitSpark(this, Location, Flash);
 }
