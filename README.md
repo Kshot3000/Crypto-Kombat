@@ -45,14 +45,14 @@ Until Blueprints exist, C++ classes run with **procedural block fighters**, hit 
 
 ## Browser version
 
-A self-contained **HTML5 Canvas** local 1v1 lives under [`web/`](web/) — no Unreal, no build step.
+A self-contained **HTML5 Canvas** local 1v1 lives under [`docs/`](docs/) — no Unreal, no build step. Play it live at https://kshot3000.github.io/Crypto-Kombat/.
 
-1. Open [`web/index.html`](web/index.html) in a desktop browser, **or**
-2. Serve it: `npx serve web` / `cd web && python3 -m http.server 8080`
+1. Open [`docs/index.html`](docs/index.html) in a desktop browser, **or**
+2. Serve it: `npx serve docs` / `cd docs && python3 -m http.server 8080`
 
 Character select → best-of-3 Blockchain Colosseum fight with the parody roster (default **Vital Spark** vs **Charles Epoch**).
 
-Full how-to + controls: **[web/README.md](web/README.md)**.
+Full how-to + controls: **[docs/README.md](docs/README.md)**.
 
 ## Project layout
 

@@ -9,19 +9,21 @@ Parody names only. Not affiliated with NetherRealm, Midway, or any cryptocurrenc
 **Option A — open the file**
 
 1. Clone the repo
-2. Open `web/index.html` in a modern desktop browser (Chrome / Firefox / Edge / Safari)
+2. Open `docs/index.html` in a modern desktop browser (Chrome / Firefox / Edge / Safari)
 
 **Option B — tiny static server**
 
 ```bash
 # from repo root
-npx --yes serve web
+npx --yes serve docs
 
 # or
-cd web && python3 -m http.server 8080
+cd docs && python3 -m http.server 8080
 ```
 
 Then visit the printed URL (e.g. `http://localhost:8080`).
+
+**Option C — play the live build:** https://kshot3000.github.io/Crypto-Kombat/
 
 Desktop keyboard is required for v1 (no on-screen buttons).
 
@@ -64,7 +66,7 @@ Desktop keyboard is required for v1 (no on-screen buttons).
 ## Files
 
 ```
-web/
+docs/
   index.html    shell + canvas
   style.css     neon page chrome
   js/roster.js  fighter definitions + normals

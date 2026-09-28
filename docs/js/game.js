@@ -170,6 +170,7 @@
     this.armor = 0;
     this.counter = 0;
     this.invuln = 0;
+    this.moonFlash = 0;
     this.flurryHits = 0;
     this.animPhase = 0;
     this.flashHit = 0;
@@ -208,7 +209,7 @@
       const idx = slot === "sp1" ? 0 : 1;
       special = this.def.specials[idx];
       if (!special) return;
-      if (this.moon < special.cost) return;
+      if (this.moon < special.cost) { this.moonFlash = 0.9; return; }
       this.moon -= special.cost;
       move = {
         slot,
@@ -282,6 +283,7 @@
     this.armor = Math.max(0, this.armor - dt);
     this.counter = Math.max(0, this.counter - dt);
     this.invuln = Math.max(0, this.invuln - dt);
+    this.moonFlash = Math.max(0, this.moonFlash - dt);
     this.flashHit = Math.max(0, this.flashHit - dt);
     this.animPhase += dt;
 
@@ -319,8 +321,8 @@
         projectiles.push({
           x: this.x + this.facing * 40,
           y: this.y - 70,
-          vx: this.facing * 420,
-          life: 1.6,
+          vx: this.facing * 520,
+          life: 2.0,
           damage: m.damage,
           hitstun: m.hitstun,
           knock: 200,
@@ -678,6 +680,7 @@
       else if (game.p2.state === "ko") endRound(1);
     }
 
+    if (tap("KeyR")) startMatch();
     if (tap("Escape")) game.mode = "select";
   }
 
@@ -840,6 +843,14 @@
     ctx.font = "bold 10px Segoe UI, sans-serif";
     ctx.textAlign = "center";
     ctx.fillText(f.def.name.split(" ")[0].toUpperCase(), 0, -f.def.height - 11);
+
+    // Low-moon feedback when a special is rejected
+    if (f.moonFlash > 0) {
+      ctx.fillStyle = "#ffd24a";
+      ctx.font = "bold 12px Segoe UI, sans-serif";
+      ctx.textAlign = "center";
+      ctx.fillText("LOW MOON", 0, -f.def.height - 32);
+    }
 
     ctx.restore();
 
